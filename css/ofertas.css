@@ -1,5 +1,498 @@
 /* =======================
-   OFERTAS PAGE STYLES
+        CSS BASE
+======================= */
+body {
+  margin: 0;
+  background: #fff;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+main {
+  min-height: 600px;
+  background: #fff;
+  max-width: 1400px;
+  margin: 40px auto 0 auto;
+  border-radius: 8px;
+  padding: 40px 40px 32px 40px;
+  box-sizing: border-box;
+}
+
+/* =======================
+          HEADER
+======================= */
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 60px;
+  padding: 40px 0 40px 60px;
+  background: #428cff;
+  color: #000;
+}
+
+.header h1 {
+  font-size: 4rem;
+  letter-spacing: 0.18em;
+  margin: 0;
+  font-weight: bold;
+}
+
+/* =======================
+         NAVBAR
+======================= */
+.navbar {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.menu {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 1.5rem;
+  letter-spacing: 0.12em;
+  font-weight: 500;
+  padding-bottom: 4px;
+  transition: border-bottom 0.2s;
+}
+
+.menu li a.active,
+.menu li a:hover {
+  border-bottom: 3px solid #000;
+}
+
+/* =======================
+   SIDEBAR / DROPDOWNS
+======================= */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 80vw;
+  height: 100vh;
+  background: #ccc;
+  z-index: 1000;
+  padding: 1rem;
+  display: none;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 1rem;
+}
+
+.dropdown-content {
+  display: none;
+  margin-left: 1rem;
+}
+
+.dropdown-btn.active + .dropdown-content {
+  display: block;
+}
+
+/* =======================
+       MAIN CONTENT
+======================= */
+.main-content {
+  display: flex;
+  gap: 40px;
+}
+
+/* =======================
+   DESTACADOS / JUEGOS
+======================= */
+.destacados {
+  flex: 2;
+}
+
+.destacados h2 {
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+
+.buscador {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 8px;
+}
+
+.buscador input {
+  padding: 8px 16px;
+  font-size: 1rem;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.buscador button {
+  background: #eee;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.juegos-destacados {
+  margin-top: 10px;
+}
+
+.juego {
+  display: inline-block;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px #0002;
+  background: #fff;
+  position: relative;
+}
+
+.juego img {
+  width: 420px;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.juego.destacado img {
+  width: 900px;
+  height: 450px;
+  object-fit: cover;
+  display: block;
+}
+
+.juego span {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  padding: 8px 0;
+  font-size: 1.1rem;
+}
+
+.juego.animado {
+  transform: scale(1.08) rotate(-2deg);
+  box-shadow: 0 8px 24px #428cff99;
+  z-index: 2;
+}
+
+/* =======================
+   ASIDE / OFERTAS / CATEGORIAS
+======================= */
+aside {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.ofertas h3,
+.categorias h3 {
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+
+.ofertas-lista,
+.categorias-lista {
+  display: flex;
+  gap: 24px;
+}
+
+.oferta,
+.categoria {
+  width: 150px;
+  height: 200px;
+}
+
+.categoria {
+  height: 175px;
+}
+
+.oferta img,
+.categoria img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* =======================
+        FOOTER
+======================= */
+.footer {
+  background: #428cff;
+  color: #000;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  padding: 30px 0;
+  margin-top: 40px;
+}
+
+/* =======================
+       SOPORTE CSS
+======================= */
+.soporte-main {
+  padding: 2rem;
+  font-family: sans-serif;
+}
+
+.soporte-section {
+  max-width: 600px;
+  margin: auto;
+}
+
+.soporte-section h2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.soporte-section p {
+  margin-bottom: 1.5rem;
+}
+
+.soporte-botones {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.soporte-boton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ddd;
+  text-decoration: none;
+  color: black;
+  padding: 1rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.soporte-boton:hover {
+  background-color: #ccc;
+}
+
+.soporte-boton span {
+  font-size: 1.2rem;
+}
+
+/* =======================
+       ACERCA DE CSS
+======================= */
+
+.acerca-main {
+  padding: 2rem;
+  text-align: center;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.caracteristicas h2 {
+  font-size: 2.2rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 2rem;
+}
+
+.caracteristicas-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.caracteristica {
+  background-color: #eee;
+  border-radius: 10px;
+  padding: 1.5rem;
+  width: 260px;
+  box-shadow: 0 2px 6px #0002;
+  transition: transform 0.2s;
+}
+
+.caracteristica:hover {
+  transform: translateY(-5px);
+}
+
+.caracteristica .icono {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1rem auto;
+  background: #ccc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.caracteristica .icono img {
+  width: 32px;
+  height: 32px;
+}
+
+.caracteristica h3 {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.caracteristica p {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* =======================
+       MEDIA QUERIES
+======================= */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    margin-right: 16px;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+    background: #428cff;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    padding: 16px 0;
+    z-index: 100;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+
+  .main-content {
+    flex-direction: column;
+  }
+
+  aside {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .ofertas-lista,
+  .categorias-lista {
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .oferta,
+  .categoria {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .juego img {
+    width: 100%;
+    height: 160px;
+  }
+
+  .juego.destacado img {
+    width: 100%;
+    height: auto;
+    max-height: 220px;
+    object-fit: cover;
+  }
+
+  .oferta img,
+  .categoria img {
+    width: 100%;
+    height: 200px;
+  }
+}
+
+/* Barra de menú mobile */
+.mobile-menu {
+  display: none;
+  background: #428cff;
+  color: #fff;
+  padding: 0.5em 1em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.menu-items {
+  display: none;
+  list-style: none;
+  padding: 0;
+  margin: 0.5em 0 0 0;
+}
+
+.menu-items.visible {
+  display: block;
+}
+
+.menu-items li {
+  margin: 0.5em 0;
+}
+
+.menu-items a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+/* Mostrar solo en mobile */
+@media (max-width: 768px) {
+  .mobile-menu {
+    display: block;
+  }
+  /* Opcional: Oculta el navbar normal en mobile */
+  nav:not(.mobile-menu) {
+    display: none;
+  }
+}
+
+/* =======================
+   OFERTAS PAGE STYLES (productos, carrito, favoritos)
 ======================= */
 .productos-lista {
   display: grid;
@@ -47,125 +540,17 @@
   border-radius: 5px;
   cursor: pointer;
   transition: background 0.3s;
+  margin: 5px 3px;
+}
+
+.producto button.favorito-btn {
+  background: #ff4757;
 }
 
 .producto button:hover {
   background: #0056b3;
 }
 
-.producto button:nth-child(2) {
-  background: #ff4757;
-}
-
-.producto button:nth-child(2):hover {
-  background: #e84118;
-}
-
-/* Carrito */
-.carrito ul,
-.favoritos ul {
-  list-style: none;
-  padding: 0;
-}
-
-.carrito-lista li,
-.favoritos-lista li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
-}
-
-.carrito-lista li button,
-.favoritos-lista li button {
-  background: #ff4757;
-  color: #fff;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s;
-}
-
-.carrito-lista li button:hover,
-.favoritos-lista li button:hover {
-  background: #e84118;
-}
-
-.total {
-  font-size: 18px;
-  font-weight: bold;
-  text-align: right;
-  margin-top: 15px;
-}
-
-.pagar-carrito {
-  display: block;
-  background: #007bff;
-  color: #fff;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  text-align: center;
-  margin: 20px auto 0 auto;
-  transition: background 0.3s;
-}
-
-.pagar-carrito:hover {
-  background: #0056b3;
-}
-
-/* =======================
-         FAVORITOS
-  ======================= */
-.favoritos {
-  background: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
-  margin-top: 20px;
-}
-
-.favoritos h2 {
-  font-size: 24px;
-  margin-bottom: 15px;
-  color: #333;
-}
-
-.favoritos ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.favoritos-lista li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
-}
-
-.favoritos-lista li:last-child {
-  border-bottom: none;
-}
-
-.favoritos-lista li button {
-  background: #ff4757;
-  color: #fff;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s;
-}
-
-.favoritos-lista li button:hover {
+.producto button.favorito-btn:hover {
   background: #e84118;
 }

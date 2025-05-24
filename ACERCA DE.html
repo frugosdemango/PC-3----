@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ATLUS</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- React Babel -->
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="headercomponent"></div>
+    <main class="acerca-main">
+      <section class="caracteristicas">
+        <h2>Características</h2>
+        <div class="caracteristicas-grid">
+          <div class="caracteristica">
+            <div class="icono">
+              <img src="img/juegos.png" alt="Acceso anticipado" />
+            </div>
+            <h3>Acceso anticipado a Juegos</h3>
+            <p>
+              Juega títulos nuevos antes que nadie gracias a nuestro programa de
+              acceso anticipado exclusivo para miembros registrados.
+            </p>
+          </div>
+          <div class="caracteristica">
+            <div class="icono">
+              <img src="img/compras.png" alt="Compras simplificadas" />
+            </div>
+            <h3>Compras simplificadas</h3>
+            <p>
+              Adquiere juegos y contenido adicional de forma rápida y segura con
+              nuestro sistema de compra optimizado.
+            </p>
+          </div>
+          <div class="caracteristica">
+            <div class="icono">
+              <img src="img/noticias.png" alt="Noticias" />
+            </div>
+            <h3>Noticias de primera mano</h3>
+            <p>
+              Mantente informado con las últimas novedades, anuncios y
+              lanzamientos directamente desde nuestros desarrolladores.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div id="footercomponent"></div>
+
+    <!-- SCRIPTS -->
+    <script type="text/babel" src="js/component.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

@@ -144,59 +144,6 @@ main {
   background: #e84118;
 }
 
-/* Carrito */
-.carrito ul,
-.favoritos ul {
-  list-style: none;
-  padding: 0;
-}
-
-.carrito-lista li,
-.favoritos-lista li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
-}
-
-.carrito-lista li button,
-.favoritos-lista li button {
-  background: #ff4757;
-  color: #fff !important;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s;
-}
-
-.carrito-lista li button:hover,
-.favoritos-lista li button:hover {
-  background: #e84118;
-  color: #fff !important;
-}
-
-.total {
-  font-size: 18px;
-  font-weight: bold;
-  text-align: right;
-  margin-top: 10px;
-}
-
-/* Favoritos */
-.favoritos ul {
-  margin-top: 10px;
-}
-
-.favoritos-lista li {
-  background: #f9f9f9;
-  border-radius: 5px;
-  padding: 10px;
-  margin-bottom: 5px;
-}
-
 /* =======================
        CARRITO
 ======================= */
@@ -353,5 +300,72 @@ main {
   .favoritos-lista li {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    margin-right: 16px;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+    background: #428cff;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    padding: 16px 0;
+    z-index: 100;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+
+  .main-content {
+    flex-direction: column;
+  }
+
+  aside {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .ofertas-lista,
+  .categorias-lista {
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .oferta,
+  .categoria {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .juego img {
+    width: 100%;
+    height: 160px;
+  }
+
+  .juego.destacado img {
+    width: 100%;
+    height: auto;
+    max-height: 220px;
+    object-fit: cover;
+  }
+
+  .oferta img,
+  .categoria img {
+    width: 100%;
+    height: 200px;
   }
 }

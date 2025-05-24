@@ -7,13 +7,13 @@ const destacados = [
 const ofertas = [
   {
     imagen:
-      "https://cdn1.epicgames.com/offer/a195e51c853d46038d13c49b882a9215/Epic_SSGenerations_BaseGame_PortraitOfferImage_1200X1600_1200x1600-922ab0cdbb3421bae269f6e8a9c68141",
+      "img/sonic.png",
   },
   {
     imagen:
       "https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Hollow_Knight_first_cover_art.webp/274px-Hollow_Knight_first_cover_art.webp.png",
   },
-  { imagen: "https://uvejuegos.com/img/caratulas/65152/Among-Us_logo.jpg" },
+  { imagen: "img/amogusindex.jpg" },
 ];
 
 const categorias = [

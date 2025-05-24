@@ -74,6 +74,39 @@ main {
 }
 
 /* =======================
+   SIDEBAR / DROPDOWNS
+======================= */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 80vw;
+  height: 100vh;
+  background: #ccc;
+  z-index: 1000;
+  padding: 1rem;
+  display: none;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 1rem;
+}
+
+.dropdown-content {
+  display: none;
+  margin-left: 1rem;
+}
+
+.dropdown-btn.active + .dropdown-content {
+  display: block;
+}
+
+/* =======================
        MAIN CONTENT
 ======================= */
 .main-content {
@@ -82,192 +115,128 @@ main {
 }
 
 /* =======================
-   OFERTAS PAGE STYLES
+   DESTACADOS / JUEGOS
 ======================= */
-.productos-lista {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+.destacados {
+  flex: 2;
 }
 
-.producto {
-  background: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 15px;
-  text-align: center;
+.destacados h2 {
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+
+.buscador {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 8px;
+}
+
+.buscador input {
+  padding: 8px 16px;
+  font-size: 1rem;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.buscador button {
+  background: #eee;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.juegos-destacados {
+  margin-top: 10px;
+}
+
+.juego {
+  display: inline-block;
+  margin: 10px 0;
+  cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px #0002;
+  background: #fff;
+  position: relative;
 }
 
-.producto:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
-
-.producto img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 10px;
-}
-
-.producto h3 {
-  font-size: 18px;
-  margin: 10px 0;
-}
-
-.producto p {
-  font-size: 16px;
-  color: #666;
-  margin: 10px 0;
-}
-
-.producto button {
-  background: #007bff;
-  color: #fff;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.producto button:hover {
-  background: #0056b3;
-}
-
-.producto button:nth-child(2) {
-  background: #ff4757;
-}
-
-.producto button:nth-child(2):hover {
-  background: #e84118;
-}
-
-/* =======================
-       CARRITO
-======================= */
-.carrito {
-  background: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
-  margin-top: 20px;
-}
-
-.carrito h2 {
-  font-size: 24px;
-  margin-bottom: 15px;
-  color: #333;
-}
-
-.carrito ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.carrito-lista li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
-}
-
-.carrito-lista li:last-child {
-  border-bottom: none;
-}
-
-.carrito-lista li button {
-  background: #ff4757;
-  color: #fff;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s;
-}
-
-.carrito-lista li button:hover {
-  background: #e84118;
-}
-
-.total {
-  font-size: 18px;
-  font-weight: bold;
-  text-align: right;
-  margin-top: 15px;
-}
-
-.pagar-carrito {
+.juego img {
+  width: 420px;
+  height: 200px;
+  object-fit: cover;
   display: block;
-  background: #007bff;
-  color: #fff;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  text-align: center;
-  margin: 20px auto 0 auto;
-  transition: background 0.3s;
 }
 
-.pagar-carrito:hover {
-  background: #0056b3;
+.juego.destacado img {
+  width: 900px;
+  height: 450px;
+  object-fit: cover;
+  display: block;
+}
+
+.juego span {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  padding: 8px 0;
+  font-size: 1.1rem;
+}
+
+.juego.animado {
+  transform: scale(1.08) rotate(-2deg);
+  box-shadow: 0 8px 24px #428cff99;
+  z-index: 2;
 }
 
 /* =======================
-       FAVORITOS
+   ASIDE / OFERTAS / CATEGORIAS
 ======================= */
-.favoritos {
-  background: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
-  margin-top: 20px;
-}
-
-.favoritos h2 {
-  font-size: 24px;
-  margin-bottom: 15px;
-  color: #333;
-}
-
-.favoritos ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.favoritos-lista li {
+aside {
+  flex: 1;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
+  flex-direction: column;
+  gap: 24px;
 }
 
-.favoritos-lista li:last-child {
-  border-bottom: none;
-}
-
-.favoritos-lista li button {
-  background: #ff4757;
-  color: #fff;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
+.ofertas h3,
+.categorias h3 {
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
   font-weight: bold;
-  transition: background 0.3s;
 }
 
-.favoritos-lista li button:hover {
-  background: #e84118;
+.ofertas-lista,
+.categorias-lista {
+  display: flex;
+  gap: 24px;
+}
+
+.oferta,
+.categoria {
+  width: 150px;
+  height: 200px;
+}
+
+.categoria {
+  height: 175px;
+}
+
+.oferta img,
+.categoria img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* =======================
@@ -285,23 +254,122 @@ main {
 }
 
 /* =======================
+       SOPORTE CSS
+======================= */
+.soporte-main {
+  padding: 2rem;
+  font-family: sans-serif;
+}
+
+.soporte-section {
+  max-width: 600px;
+  margin: auto;
+}
+
+.soporte-section h2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.soporte-section p {
+  margin-bottom: 1.5rem;
+}
+
+.soporte-botones {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.soporte-boton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ddd;
+  text-decoration: none;
+  color: black;
+  padding: 1rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.soporte-boton:hover {
+  background-color: #ccc;
+}
+
+.soporte-boton span {
+  font-size: 1.2rem;
+}
+
+/* =======================
+       ACERCA DE CSS
+======================= */
+
+.acerca-main {
+  padding: 2rem;
+  text-align: center;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.caracteristicas h2 {
+  font-size: 2.2rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 2rem;
+}
+
+.caracteristicas-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.caracteristica {
+  background-color: #eee;
+  border-radius: 10px;
+  padding: 1.5rem;
+  width: 260px;
+  box-shadow: 0 2px 6px #0002;
+  transition: transform 0.2s;
+}
+
+.caracteristica:hover {
+  transform: translateY(-5px);
+}
+
+.caracteristica .icono {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1rem auto;
+  background: #ccc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.caracteristica .icono img {
+  width: 32px;
+  height: 32px;
+}
+
+.caracteristica h3 {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.caracteristica p {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* =======================
        MEDIA QUERIES
 ======================= */
 @media (max-width: 768px) {
-  .productos-lista {
-    grid-template-columns: 1fr;
-  }
-
-  .producto {
-    padding: 10px;
-  }
-
-  .carrito-lista li,
-  .favoritos-lista li {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
   .menu-toggle {
     display: block;
     background: none;
@@ -367,5 +435,58 @@ main {
   .categoria img {
     width: 100%;
     height: 200px;
+  }
+}
+
+/* Barra de menú mobile */
+.mobile-menu {
+  display: none;
+  background: #428cff;
+  color: #fff;
+  padding: 0.5em 1em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.menu-items {
+  display: none;
+  list-style: none;
+  padding: 0;
+  margin: 0.5em 0 0 0;
+}
+
+.menu-items.visible {
+  display: block;
+}
+
+.menu-items li {
+  margin: 0.5em 0;
+}
+
+.menu-items a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+/* Mostrar solo en mobile */
+@media (max-width: 768px) {
+  .mobile-menu {
+    display: block;
+  }
+  /* Opcional: Oculta el navbar normal en mobile */
+  nav:not(.mobile-menu) {
+    display: none;
   }
 }
